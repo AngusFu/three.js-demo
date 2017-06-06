@@ -15,13 +15,51 @@
 		a {
 			color: #0078ff;
 		}
+
+		.flag-1 {
+			position: absolute;
+			width: 240px;
+			margin-left: -120px;
+			height: 200px;
+			margin-top: -200px;
+			font-family: "PingFang SC", "STHeitiSC-Light", "Microsoft Yahei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+			text-align: center;
+			line-height: 1.4;
+			overflow: hidden;
+			transform-origin: 50% 100%;
+		}
+
+		.flag-1:after {
+			content: '';
+			display: block;
+			width: 1px;
+			height: 150px;
+			background: #01c7bf;
+			margin: 0 auto;
+		}
+		.flag-1 > p {
+			color: #fff;
+			font-size: 12px;
+			margin: 0;
+		}
+
+		.flag-1 > h2 {
+			color: #01c7bf;
+			font-size: 24px;
+			font-weight: normal;
+			margin: 0;
+		}
 	</style>
 </head>
 
 <body>
-	<script src="./node_modules/three/build/three.min.js"></script>
-	<script src="scripts/Projector.js"></script>
-	<script src="scripts/CanvasRenderer.js"></script>
+	<div id="test" class="flag-1">
+		<p>New retail</p>
+		<h2>新零售</h2>
+	</div>
+	<script src="./scripts/three.js"></script>
+	<script src="./scripts/CanvasRenderer.js"></script>
+	<script src="./scripts/Projector.js"></script>
 	<script src="./dist/bundle.js"></script>
 </body>
 

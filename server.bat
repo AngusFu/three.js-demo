@@ -1,0 +1,1 @@
+browser-sync start --server --files "*.html,dist/*,scripts/*" --index "index.html" --open "external" --reload-debounce --no-notify
