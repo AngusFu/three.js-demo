@@ -29,3 +29,10 @@ export const screenOneFlags = [{
   maxs: 1.2,
   mins: 0.9
 }];
+
+export const logoBgColorMatrix = [
+  57, 52, 57, 52, 57, 57, 52,
+  52, 57, 52, 57, 52, 52, 57,
+  52, 57, 57, 57, 52, 57, 57,
+  57, 52, 52, 57, 52, 57, 52
+];

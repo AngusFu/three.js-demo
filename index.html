@@ -2,62 +2,102 @@
 <html lang="en">
 
 <head>
-	<title>three.js canvas - particles - waves</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<style>
-		body {
-			background-color: #000000;
-			margin: 0px;
-			overflow: hidden;
-		}
-
-		a {
-			color: #0078ff;
-		}
-
-		.flag-1 {
-			position: absolute;
-			width: 240px;
-			margin-left: -120px;
-			height: 200px;
-			margin-top: -200px;
-			font-family: "PingFang SC", "STHeitiSC-Light", "Microsoft Yahei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-			text-align: center;
-			line-height: 1.4;
-			overflow: hidden;
-			transform-origin: 50% 100%;
-		}
-
-		.flag-1:after {
-			content: '';
-			display: block;
-			width: 1px;
-			height: 150px;
-			background: #01c7bf;
-			margin: 0 auto;
-		}
-		.flag-1 > p {
-			color: #fff;
-			font-size: 12px;
-			font-weight: 300;
-			margin: 0;
-		}
-
-		.flag-1 > h2 {
-			color: #01c7bf;
-			font-size: 24px;
-			font-weight: 300;
-			margin: 0;
-		}
-	</style>
+  <title>three.js canvas - particles - waves</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-	<script src="./scripts/three.js"></script>
-	<script src="./scripts/CanvasRenderer.js"></script>
-	<script src="./scripts/Projector.js"></script>
-	<script src="./dist/bundle.js"></script>
+  <div id="three-js-effects">
+    <div id="three-js-screen-1">
+      <img class="globe" src="./images/globe.png" alt="">
+      <div class="text-band">
+        <p class="text-band-head" style="width: 465px;">致力于成为以数据+技术驱动</p>
+        <p class="text-band-tail" style="width: 331px;">的全球化零售服务商</p>
+      </div>
+    </div>
+
+    <div id="three-js-screen-2">
+      <div class="text-band">
+        <p class="text-band-head" style="width: 215px;">实力雄厚</p>
+        <p class="text-band-tail" style="width: 202px;">屡获殊荣</p>
+      </div>
+
+      <div class="honor-bands">
+        <div>
+          <div class="honor-band">
+            <div>
+              天猫<br>五星<br>服务商
+            </div>
+            <p>天猫平台授予</p>
+          </div>
+          <div class="honor-band">
+            <div>杰出<br>贡献奖<br>殊荣</div>
+            <p>天猫平台授予</p>
+            <span>（ 全行业仅3家，其中TP2家 ）</span>
+          </div>
+          <div class="honor-band">
+            <div>特殊<br>贡献奖<br><hr></div>
+            <p>京东平台授予</p>
+          </div>
+          <div class="honor-band">
+            <div>金牌<br>淘拍档<br><hr></div>
+            <p>阿里平台授予</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="three-js-screen-3">
+      <div class="logo-wall-wrap">
+        <div class="logo-flips">
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+          <div class="logo-flip"></div>
+        </div>
+        <div class="logo-wall"></div>
+      </div>
+
+      <div class="text-band">
+        <p class="text-band-head" style="width: 264px;">实力雄厚</p>
+        <p class="text-band-tail" style="width: 230px;">屡获殊荣</p>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts/three.js"></script>
+  <script src="./scripts/CanvasRenderer.js"></script>
+  <script src="./scripts/Projector.js"></script>
+  <script src="./dist/bundle.js"></script>
 </body>
 
 </html>
