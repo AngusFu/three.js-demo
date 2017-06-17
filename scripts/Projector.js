@@ -3,6 +3,7 @@
  * @author supereggbert / http://www.paulbrunt.co.uk/
  * @author julianwa / https://github.com/julianwa
  */
+const THREE = window.THREE;
 
 THREE.RenderableObject = function () {
 

@@ -19,7 +19,7 @@ body {
 .text-band::after {
   content: '';
   position: absolute;
-  top: 50px;
+  top: 15px;
   right: -15px;
   width: 30px;
   height: 1px;
@@ -32,6 +32,7 @@ body {
   background-color: #00fff5;
   font-weight: bold;
   line-height: 74px;
+  margin: 0;
 }
 
 .text-band-tail {
@@ -41,6 +42,7 @@ body {
   border: 1px solid #00fff5;
   box-sizing: border-box;
   line-height: 72px;
+  margin: 0;
 }
 
 #three-js-effects {
@@ -58,7 +60,7 @@ body {
 }
 
 #three-js-screen-1 {
-  background: #000 url(./images/digits.png) 0 0 no-repeat;
+  background: #000 url(../images/digits.png) 0 0 no-repeat;
   background-size: cover;
 }
 
@@ -139,7 +141,7 @@ body {
   margin: 20px;
   color: #01c7bf;
   text-align: center;
-  background: url(./images/honor.png) center 20px no-repeat;
+  background: url(../images/honor.png) center 20px no-repeat;
 }
 
 .honor-band>div {
@@ -172,9 +174,9 @@ body {
 
 .logo-wall-wrap {
   opacity: .6;
-  mask-image: url(./images/logo-wall-mask.png?v=2);
+  mask-image: url(../images/logo-wall-mask.png?v=2);
   mask-size: cover;
-  -webkit-mask-image: url(./images/logo-wall-mask.png?v=2);
+  -webkit-mask-image: url(../images/logo-wall-mask.png?v=2);
   -webkit-mask-size: cover;
 }
 @supports not (mask-size: cover) or (-webkit-mask-size: cover) {
@@ -186,7 +188,7 @@ body {
     top: 0;
     bottom: 0;
     z-index: 9;
-    background: url(./images/logo-wall-mask-fallback.png);
+    background: url(../images/logo-wall-mask-fallback.png);
   }
 }
 .logo-wall-wrap:after  {
@@ -197,7 +199,7 @@ body {
   top: 0;
   bottom: 0;
   z-index: 99;
-  background: url(./images/logo-wall-mask-top.png);
+  background: url(../images/logo-wall-mask-top.png);
   background-size: cover;
 }
 
@@ -212,16 +214,16 @@ body {
   bottom: 0;
 }
 .logo-wall {
-  background: url(./images/logos.png) 0 0 no-repeat;
+  background: url(../images/logos.png) 0 0 no-repeat;
   background-size: cover;
   overflow: hidden;
-  -webkit-mask-image: url(./images/logo-wall-mask.png);
+  -webkit-mask-image: url(../images/logo-wall-mask.png);
 }
 .logo-flips > .logo-flip {
   float: left;
   padding: 5.66% 7.14%;
   background-color: rgb(52, 52, 52);
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
 .logo-flips > .logo-flip.hlight {
   background-color: rgb(100,100,100)!important;

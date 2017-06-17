@@ -1,6 +1,7 @@
 /**
  * @author mrdoob / http://mrdoob.com/
  */
+const THREE = window.THREE;
 
 THREE.SpriteCanvasMaterial = function ( parameters ) {
 
@@ -31,12 +32,7 @@ THREE.SpriteCanvasMaterial.prototype.clone = function () {
 
 };
 
-//
-
 THREE.CanvasRenderer = function ( parameters ) {
-
-	console.log( 'THREE.CanvasRenderer', THREE.REVISION );
-
 	parameters = parameters || {};
 
 	var _this = this,
