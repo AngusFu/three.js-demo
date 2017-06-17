@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "performance-now": "^2.1.0",
-    "raf": "^3.3.2",
-    "swiper": "^3.4.2"
+    "raf": "^3.3.2"
   }
 }
