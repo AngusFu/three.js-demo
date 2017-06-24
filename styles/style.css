@@ -16,6 +16,12 @@ body {
   text-align: center;
 }
 
+@media screen and (max-height: 700px) {
+  .text-band {
+    top: 10%;
+  }
+}
+
 .text-band::after {
   content: '';
   position: absolute;
@@ -58,6 +64,9 @@ body {
   height: 100%;
   background-color: #000;
 }
+#three-js-effects > div > div {
+  overflow: hidden;
+}
 
 #three-js-screen-1 {
   background: #000 url(../images/digits.png) 0 0 no-repeat;
@@ -79,7 +88,7 @@ body {
   left: 0;
 }
 
-#three-js-screen-1 .flag-1 {
+.flag-1, .flag-3 {
   position: absolute;
   width: 240px;
   margin-left: -120px;
@@ -89,25 +98,28 @@ body {
   line-height: 1.4;
   overflow: hidden;
   transform-origin: 50% 100%;
+  z-index: 9999;
 }
 
-#three-js-screen-1 .flag-1:after {
+.flag-1:after,
+.flag-3 > i {
   content: '';
   display: block;
   width: 1px;
   height: 150px;
   background: #01c7bf;
   margin: 0 auto;
+  transform-origin: 50% 100%;
 }
 
-#three-js-screen-1 .flag-1>p {
+.flag-1>p {
   color: #fff;
   font-size: 12px;
   font-weight: 300;
   margin: 0;
 }
 
-#three-js-screen-1 .flag-1>h2 {
+.flag-1>h2 {
   color: #01c7bf;
   font-size: 24px;
   font-weight: 300;
@@ -173,7 +185,6 @@ body {
 
 
 .logo-wall-wrap {
-  opacity: .6;
   mask-image: url(../images/logo-wall-mask.png?v=2);
   mask-size: cover;
   -webkit-mask-image: url(../images/logo-wall-mask.png?v=2);
@@ -217,6 +228,7 @@ body {
   background: url(../images/logos.png) 0 0 no-repeat;
   background-size: cover;
   overflow: hidden;
+  mask-image: url(../images/logo-wall-mask.png);
   -webkit-mask-image: url(../images/logo-wall-mask.png);
 }
 .logo-flips > .logo-flip {
@@ -227,4 +239,12 @@ body {
 }
 .logo-flips > .logo-flip.hlight {
   background-color: rgb(100,100,100)!important;
+}
+#three-js-screen-3 > canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
 }

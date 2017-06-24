@@ -10,7 +10,6 @@ import {
 } from './common';
 
 import { screenOneFlags } from '../config';
-
 const screenOneFlagMap = initFlags(screenOneFlags);
 
 const SEPARATION = 70;
@@ -37,7 +36,6 @@ const { particles, pointsWithFlag } = initParticles({
     }
   }
 });
-
 
 initThreeJS({
   render,
@@ -109,3 +107,4 @@ function initFlags(flags) {
     return acc;
   }, {});
 }
+

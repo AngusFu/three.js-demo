@@ -1,6 +1,6 @@
-import requestAnimationFrame from 'raf';
-import './CanvasRenderer';
-import './Projector';
+import requestAnimationFrame from "raf";
+import "./CanvasRenderer";
+import "./Projector";
 
 const callbacksOnResize = [];
 
@@ -23,12 +23,8 @@ export function $$(selector) {
 /**
  * transform point in Three.js world to client
  */
-export function toScreenCords({
-  x,
-  y,
-  z
-}, camera) {
-  const vector = (new THREE.Vector3(x, y, z)).project(camera);
+export function toScreenCords({ x, y, z }, camera) {
+  const vector = new THREE.Vector3(x, y, z).project(camera);
   return {
     x: Math.round(windowHalfX * (1 + vector.x)),
     y: Math.round(windowHalfY * (1 - vector.y))
@@ -39,7 +35,7 @@ export function toScreenCords({
  * add updating function that will be invoked window resize
  */
 export function bindResizeCallback(camera, renderer) {
-  const update = function () {
+  const update = function() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -47,12 +43,11 @@ export function bindResizeCallback(camera, renderer) {
   callbacksOnResize.push(update);
 }
 
-window.addEventListener('resize', function onWindowResize() {
+window.addEventListener("resize", function onWindowResize() {
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;
   callbacksOnResize.forEach(fn => fn());
 });
-
 
 /**
  * Axis helper
@@ -87,12 +82,7 @@ export function animate(render) {
 /**
  * initialize
  */
-export function initThreeJS({
-  camera,
-  renderer,
-  container,
-  render
-}) {
+export function initThreeJS({ camera, renderer, container, render }) {
   bindResizeCallback(camera, renderer);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -103,19 +93,13 @@ export function initThreeJS({
 /**
  * 波纹粒子
  */
-export function initParticles({
-  scene,
-  amountX,
-  amontY,
-  sep,
-  markPoint
-}) {
+export function initParticles({ scene, amountX, amontY, sep, markPoint }) {
   let index = 0;
   const particles = [];
   const pointsWithFlag = [];
   const material = new THREE.SpriteCanvasMaterial({
     color: 0x94fffb,
-    program: function (context) {
+    program: function(context) {
       context.beginPath();
       context.arc(0, 0, 1, 0, Math.PI * 2, true);
       context.fill();
@@ -125,10 +109,10 @@ export function initParticles({
   for (let i = 0; i < amountX; i++) {
     for (let j = 0; j < amontY; j++) {
       const particle = new THREE.Sprite(material);
-      particle.position.x = i * sep - ((amountX * sep) / 2);
-      particle.position.z = j * sep - ((amontY * sep) / 2);
+      particle.position.x = i * sep - amountX * sep / 2;
+      particle.position.z = j * sep - amontY * sep / 2;
       particles[index++] = particle;
-      
+
       scene.add(particle);
       markPoint && markPoint(i, j, particle, pointsWithFlag);
     }

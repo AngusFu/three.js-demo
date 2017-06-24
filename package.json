@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serv": "browser-sync start --server --files \"*.html,dist/*,scripts/*\" --index \"index.html\" --open \"external\" --reload-debounce --no-notify",
+    "serv": "browser-sync start --server --files \"*.html,dist/*\" --index \"index.html\" --open \"external\" --reload-debounce --no-notify",
     "rollup": "rollup -c rollup.config.js -w",
     "start": "run-p rollup serv"
   },
