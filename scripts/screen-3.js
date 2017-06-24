@@ -46,13 +46,26 @@ const { particles, pointsWithFlag } = initParticles({
   }
 });
 
-initLogoWall();
-initThreeJS({
+const logoWallCtrl = initLogoWall();
+
+const waveCtrl = initThreeJS({
   render,
   camera,
   renderer,
   container: screenDOM
 });
+
+export default {
+  play() {
+    logoWallCtrl.play();
+    waveCtrl.play();
+  },
+  pause() {
+    logoWallCtrl.pause();
+    waveCtrl.pause();
+  }
+};
+
 
 function render() {
   camera.position.x += (mouseX - camera.position.x) * 0.05;
@@ -101,7 +114,7 @@ function render() {
 }
 
 function initLogoWall() {
-  const queryWithSideEffect = function(sel, fn) {
+  const queryWithSideEffect = function (sel, fn) {
     const arr = toArray(screenDOM.querySelectorAll(sel));
     return arr.map((el, i) => {
       fn && fn(el, i);
@@ -109,21 +122,27 @@ function initLogoWall() {
     });
   };
 
-  const logoFlips = queryWithSideEffect(".logo-flip", (el, i) => {
-    const color = logoBgColorMatrix[i];
-    el.style.backgroundColor = `rgb(${color},${color},${color})`;
-  });
+  const logoFlips = queryWithSideEffect(
+    '.logo-flip',
+    (el, i) => {
+      const color = logoBgColorMatrix[i];
+      el.style.backgroundColor = `rgb(${color},${color},${color})`;
+    }
+  );
 
-  const highlightFlips = function() {
+  const highlightFlips = function () {
     // remove highlight elems first
-    queryWithSideEffect(".hlight", el => el.classList.remove("hlight"));
+    queryWithSideEffect(
+      '.hlight',
+      el => el.classList.remove('hlight')
+    );
 
     // 随机两个高亮
     // 保证左侧四列和右侧四列都有
     // 且两者不在一行
     // 第四行容易被遮住 所以降低概率
     const getColNum = () => {
-      return Math.random() > 0.2 ? (Math.random() * 3) | 0 : 3;
+      return Math.random() > 0.2 ? (Math.random() * 3 | 0) : 3;
     };
 
     const [first, second] = (() => {
@@ -134,18 +153,29 @@ function initLogoWall() {
       }
 
       return [
-        7 * cols[0] + ((Math.random() * 4) | 0),
-        7 * cols[1] + ((Math.random() * 3) | 0) + 4
+        7 * cols[0] + (Math.random() * 4 | 0),
+        7 * cols[1] + (Math.random() * 3 | 0) + 4
       ];
     })();
 
-    logoFlips[first].classList.add("hlight");
-    logoFlips[second].classList.add("hlight");
+    logoFlips[first].classList.add('hlight');
+    logoFlips[second].classList.add('hlight');
+  }
+
+  let stop = false;
+  ; (function runFlipHighlight() {
+    stop || highlightFlips();
+    setTimeout(runFlipHighlight, Math.random() * 2000 + 2000);
+  }());
+
+  return {
+    play() {
+      stop = false;
+    },
+    pause() {
+      stop = true;
+    }
   };
-  (function runFlipHighlight() {
-    highlightFlips();
-    setTimeout(runFlipHighlight, Math.random() * 5000 + 2000);
-  })();
 }
 
 // document.addEventListener("mousemove", onDocumentMouseMove, false);

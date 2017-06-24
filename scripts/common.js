@@ -72,11 +72,23 @@ export function createSceneAndRenderer() {
  * update stage
  */
 export function animate(render) {
+  let stop = false;
+
   function animate() {
     requestAnimationFrame(animate);
-    render();
+    stop || render();
   }
+
   animate();
+
+  return {
+    pause() {
+      stop = true;
+    },
+    play() {
+      stop = false;
+    }
+  };
 }
 
 /**
@@ -87,7 +99,7 @@ export function initThreeJS({ camera, renderer, container, render }) {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
-  animate(render);
+  return animate(render);
 }
 
 /**

@@ -37,7 +37,7 @@ const { particles, pointsWithFlag } = initParticles({
   }
 });
 
-initThreeJS({
+export default initThreeJS({
   render,
   camera,
   renderer,

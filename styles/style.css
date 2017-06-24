@@ -16,9 +16,14 @@ body {
   text-align: center;
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 800px) {
   .text-band {
-    top: 10%;
+    top: 15%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .text-band {
+    right: 8%;
   }
 }
 

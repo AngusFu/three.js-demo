@@ -34,7 +34,7 @@ const { particles } = initParticles({
   sep: SEPARATION
 });
 
-initThreeJS({
+export default initThreeJS({
   render,
   camera,
   renderer,
