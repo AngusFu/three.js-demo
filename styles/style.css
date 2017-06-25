@@ -74,7 +74,7 @@ body {
 }
 
 #three-js-screen-1 {
-  background: #000 url(../images/digits.png) 0 0 no-repeat;
+  /*background: #000 url(../images/digits.png) 0 0 no-repeat;*/
   background-size: cover;
 }
 
