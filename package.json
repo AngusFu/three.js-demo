@@ -6,6 +6,7 @@
   "scripts": {
     "serv": "browser-sync start --server --files \"*.html,dist/*\" --index \"index.html\" --open \"external\" --reload-debounce --no-notify",
     "rollup": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
     "start": "run-p rollup serv"
   },
   "repository": {
@@ -20,12 +21,13 @@
   "homepage": "https://github.com/AngusFu/three.js-demo#readme",
   "devDependencies": {
     "browser-sync": "^2.18.12",
+    "cssnano": "^3.10.0",
     "npm-run-all": "^4.0.2",
     "rollup": "^0.42.0",
     "rollup-plugin-buble": "^0.15.0",
     "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-css-only": "^0.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^0.5.3",
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^3.2.2"
   },
