@@ -8,7 +8,7 @@ export const THREE = window.THREE;
 export { requestAnimationFrame };
 
 export let windowHalfX = window.innerWidth / 2;
-export let windowHalfY = window.innerHeight / 2;
+export let windowHalfY = window.innerHeight / 2 / 2;
 
 export function toArray(arrLike) {
   return Array.prototype.slice.call(arrLike);
@@ -27,7 +27,7 @@ export function toScreenCords({ x, y, z }, camera) {
   const vector = new THREE.Vector3(x, y, z).project(camera);
   return {
     x: Math.round(windowHalfX * (1 + vector.x)),
-    y: Math.round(windowHalfY * (1 - vector.y))
+    y: Math.round(windowHalfY * (1 - vector.y)) + windowHalfY * 2
   };
 }
 
@@ -36,16 +36,16 @@ export function toScreenCords({ x, y, z }, camera) {
  */
 export function bindResizeCallback(camera, renderer) {
   const update = function() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = window.innerWidth / window.innerHeight / 2;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight / 2);
   };
   callbacksOnResize.push(update);
 }
 
 window.addEventListener("resize", function onWindowResize() {
   windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
+  windowHalfY = window.innerHeight / 2 / 2;
   callbacksOnResize.forEach(fn => fn());
 });
 
@@ -97,7 +97,7 @@ export function animate(render) {
 export function initThreeJS({ camera, renderer, container, render }) {
   bindResizeCallback(camera, renderer);
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight / 2);
   container.appendChild(renderer.domElement);
   return animate(render);
 }

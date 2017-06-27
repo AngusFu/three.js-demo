@@ -71,6 +71,7 @@ body {
 }
 #three-js-effects > div > div {
   overflow: hidden;
+  background: #000;
 }
 
 #three-js-screen-1 {
@@ -95,8 +96,8 @@ body {
 
 .flag-1, .flag-3 {
   position: absolute;
-  width: 240px;
-  margin-left: -120px;
+  width: 300px;
+  margin-left: -150px;
   height: 200px;
   margin-top: -200px;
   text-align: center;
@@ -119,14 +120,14 @@ body {
 
 .flag-1>p {
   color: #fff;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 300;
   margin: 0;
 }
 
 .flag-1>h2 {
   color: #01c7bf;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 300;
   margin: 0;
 }
@@ -146,10 +147,13 @@ body {
 }
 
 .honor-bands > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 1200px;
   height: 300px;
   overflow: hidden;
-  margin: auto;
+  transform: translate(-50%);
 }
 
 .honor-bands > div > .honor-band {
@@ -245,11 +249,11 @@ body {
 .logo-flips > .logo-flip.hlight {
   background-color: rgb(100,100,100)!important;
 }
-#three-js-screen-3 > canvas {
+.swiper-slide > canvas {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 50%;
   bottom: 0;
   z-index: 1;
 }
