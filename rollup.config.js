@@ -17,7 +17,7 @@ export default {
     //   output: 'dist/bundle.css'
     // }),
     postcss({
-      plugins: [cssnano()],
+      // plugins: [cssnano()],
       sourceMap: false,
       extract: 'dist/bundle.css'
     }),

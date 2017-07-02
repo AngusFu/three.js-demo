@@ -36,7 +36,7 @@ export function toScreenCords({ x, y, z }, camera) {
  */
 export function bindResizeCallback(camera, renderer) {
   const update = function() {
-    camera.aspect = window.innerWidth / window.innerHeight / 2;
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight / 2);
   };
