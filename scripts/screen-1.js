@@ -71,7 +71,7 @@ function render() {
 
         const { style, mins, maxs } = screenOneFlagMap[`${ix}x${iy}`];
         const { x, y } = toScreenCords(point, camera);
-        console.log(x, y)
+
         const scale =
           Math.min(Math.max(particle.scale.x / 6 * maxs, mins), maxs) +
           particle.scale.x / 30;
