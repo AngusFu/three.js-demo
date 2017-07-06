@@ -56,6 +56,8 @@ function render() {
 
   let i = 0;
   let j = 0;
+  const ratio = windowHalfY / 250;
+
   for (let ix = 0; ix < AMOUNTX; ix++) {
     for (let iy = 0; iy < AMOUNTY; iy++) {
       const particle = particles[i++];
@@ -75,7 +77,8 @@ function render() {
         const scale =
           Math.min(Math.max(particle.scale.x / 6 * maxs, mins), maxs) +
           particle.scale.x / 30;
-        style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+          console.log(scale, windowHalfY / 200);
+        style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale * ratio })`;
       }
     }
   }

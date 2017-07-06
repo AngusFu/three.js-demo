@@ -95,6 +95,7 @@ body {
   right: 0;
   top: 0;
   width: 48%;
+  z-index: 999;
 }
 
 #three-js-screen-1>img.digits {
@@ -117,6 +118,10 @@ body {
   transform-origin: 50% 100%;
   z-index: 9999;
 }
+.flag-3 {
+  height: 35vh;
+  margin-top: -35vh;
+}
 
 .flag-1:after,
 .flag-3 > i {
@@ -127,6 +132,9 @@ body {
   background: #01c7bf;
   margin: 0 auto;
   transform-origin: 50% 100%;
+}
+.flag-3 > i {
+  height: 30vh;
 }
 
 .flag-1>p {
