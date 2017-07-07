@@ -234,7 +234,7 @@ body {
     background: url(../images/logo-wall-mask-fallback.png);
   }
 }
-.logo-wall-wrap:after  {
+/*.logo-wall-wrap:after  {
   content: '';
   position: absolute;
   left: 0;
@@ -244,7 +244,7 @@ body {
   z-index: 99;
   background: url(../images/logo-wall-mask-top.png);
   background-size: cover;
-}
+}*/
 
 .logo-wall-wrap,
 .logo-wall,
