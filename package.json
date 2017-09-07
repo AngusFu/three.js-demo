@@ -9,16 +9,7 @@
     "build": "rollup -c rollup.config.js",
     "start": "run-p rollup serv"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AngusFu/three.js-demo.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AngusFu/three.js-demo/issues"
-  },
-  "homepage": "https://github.com/AngusFu/three.js-demo#readme",
+  "author": "angusfu1126@qq.com",
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "cssnano": "^3.10.0",

@@ -23,12 +23,7 @@ const slidesMap = { slide1, slide2, slide3 };
 
 setTimeout(() => {
   $('.swiper-container').classList.remove('loading');
-
   const screens = [].slice.call(document.querySelectorAll('.swiper-wrapper > div'))
-  const arr = screens
-    .map(el => el.id.replace(/[^\d]/g, ''))
-    .map(num => 'slide' + num)
-
   new window.Swiper ('.swiper-container', {
     loop: false,
     autoplay: true,
