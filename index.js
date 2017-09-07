@@ -19,9 +19,16 @@ const setScale = () => {
 setScale();
 window.addEventListener("resize", setScale);
 
+const slidesMap = { slide1, slide2, slide3 };
+
 setTimeout(() => {
   $('.swiper-container').classList.remove('loading');
-  const slides = [slide1, slide2, slide3];
+
+  const screens = [].slice.call(document.querySelectorAll('.swiper-wrapper > div'))
+  const arr = screens
+    .map(el => el.id.replace(/[^\d]/g, ''))
+    .map(num => 'slide' + num)
+
   new window.Swiper ('.swiper-container', {
     loop: false,
     autoplay: true,
@@ -30,11 +37,13 @@ setTimeout(() => {
     prevButton: '.swiper-button-prev',
     autoplayDisableOnInteraction: false,
     onSlideChangeStart(swiper) {
-      slides.forEach((slide, i) => {
-        if (i === swiper.activeIndex) {
-          slide.play();
+      const idIndex = screens[swiper.activeIndex].id.replace(/[^\d]/g, '')
+      const id = 'slide' + idIndex
+      Object.keys(slidesMap).map((key) => {
+        if (key === id) {
+          slidesMap[key].play();
         } else {
-          slide.pause();
+          slidesMap[key].pause();
         }
       })
     }
